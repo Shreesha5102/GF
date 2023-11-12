@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Container from "@mui/material/Container";
 import "./App.css";
 
@@ -6,7 +6,7 @@ import "./App.css";
 import Home from "./components/landing/landing.js";
 import ErrorPage from "./components/error/error";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
