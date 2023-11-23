@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createHashRouter,
+} from "react-router-dom";
 import Container from "@mui/material/Container";
 import "./App.css";
 
@@ -6,6 +10,7 @@ import "./App.css";
 import Home from "./components/landing/landing.js";
 import ErrorPage from "./components/error/error";
 import Wordle from "./components/wordle/wordle.js";
+import Mywordle from "./components/mywordle/mywordle.js";
 
 const solution = "zebra";
 
@@ -18,6 +23,11 @@ const router = createBrowserRouter([
   {
     path: "GF/wordle",
     element: <Wordle solution={solution} />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "GF/mywordle",
+    element: <Mywordle solution={solution} />,
     errorElement: <ErrorPage />,
   },
 ]);
